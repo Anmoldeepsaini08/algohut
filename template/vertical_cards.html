@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<title></title>
+</head>
+
+
+<style >
+  body::-webkit-scrollbar {
+  display: none;
+}
+  body{
+    overflow-x: hidden;
+  }
+.card-list_nav button ,h1{
+  margin-top: 1%;
+
+}
+
+.cards-list{
+  width:60%;
+  margin:1em auto;
+  
+
+}
+.homecard{
+  border:1px solid #eee;
+  padding:1em;
+  margin:1em;
+ display: flex;
+ justify-content: space-between;
+ height: 13vh;
+  position:relative;
+  box-shadow:0px 0px 3px 3px #f7f7f7;
+}
+.homecard:hover{
+  background:#ffffff;
+  border:1px solid royalblue;
+  box-shadow:0px 0px 0px #eee;
+}
+.homecard h2{
+  margin:0;
+  padding:0 ;
+  color:black;
+  font-size:2em;
+  word-wrap: break-word;
+  bottom:0;
+  
+  float: left;
+}
+
+
+
+
+
+
+
+/* From uiverse.io by @adamgiebl */
+button {
+ font-family: inherit;
+ font-size: 15px;
+ background: royalblue;
+ color: white;
+ padding: 0.6em 1em;
+ padding-left: 0.9em;
+ display: flex;
+ align-items: center;
+ border: none;
+ border-radius: 16px;
+ overflow: hidden;
+ transition: all 0.2s;
+ float: right;
+ bottom: 0;
+z-index: 3;
+ cursor: pointer;
+ position: relative;
+}
+
+button span {
+ display: block;
+ margin-left: 0.3em;
+ transition: all 0.3s ease-in-out;
+}
+
+button svg {
+ display: block;
+ transform-origin: center center;
+ transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+ animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+ transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+ transform: translateX(5em);
+}
+
+button:active {
+ transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+ from {
+  transform: translateY(0.1em);
+ }
+
+ to {
+  transform: translateY(-0.1em);
+ }
+}
+@media  only screen and (max-device-width: 600px) {
+  .homecard{
+ 
+ height:15vh;
+ 
+}
+}
+@media  only screen and (max-width: 850px) {
+  .cards-list{
+width:100%;
+
+}
+
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 768px) {
+
+.cards-list{
+width:100%;
+
+}
+.homecard{
+ 
+ height:13vh;
+ 
+}
+.homecard h2{
+  font-size:1.5em;
+}
+
+
+}
+
+</style>
+<body>
+
+
+  <nav class="navbar navbar-dark " style="background-color: #454555">
+    <div class="container-fluid" style="width: 90%;">
+      <a class="navbar-brand" style="font-size: 1.5em;" href="{%url 'home' %}">AlgoHut</a>
+    
+      
+        
+      
+    </div>
+  </nav>
+    
+ <h1 style="text-align: center;">{{page_name}}</h1>
+
+
+</div>
+<hr class="clearfix">
+{% for i in cards %}
+<div class="cards-list">
+  <div class="homecard">
+    <h2>{{i}}</h2>
+
+
+  <!--  <a href="#">Read more</a>-->
+    <a class ='button' href="{{i}}"><button >
+
+      <div class="svg-wrapper-1">
+        <div class="svg-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="24">
+            <path fill="none" d="M0 0h24v24H0z"></path>
+            <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+          </svg>
+        </div>
+      </div>
+      <span>Execute</span>
+    </button>
+    </a>
+  </div>
+
+</div>
+{% endfor %}
+<hr class="clearfix">
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+ 
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+
+    <section class="mb-4"  sty>
+  
+   
+    
+
+    
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Anmoldeepsaini08" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+
+
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/anmoldeep-saini-77b4a0194/" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+
+   
+    </section>
+  </div>
+
+
+    © Designed and Created by:
+    <a class="text-white" href="https://www.linkedin.com/in/anmoldeep-saini-77b4a0194/">Anmoldeep Saini</a>
+    
+  <!-- Copyright -->
+</footer>
+
+</body>
+
+
+
+
+</html>
